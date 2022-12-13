@@ -26,19 +26,19 @@ public class NewBehaviourScript : MonoBehaviour
     private UnityEngine.AI.NavMeshAgent agent;
 
     // Animation de l'ennemi
-    private Animation animations;
+    private Animator animations;
     // Start is called before the first frame update
     void Start()
     {
         agent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
-        animations = gameObject.GetComponent<Animation>();
+        animations = gameObject.GetComponent<Animator>();
         attackTime = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Target = GameObject.Find("Player").transform;
+        Target = GameObject.Find("Cube").transform;
 
         Distance = Vector3.Distance(Target.position, transform.position);
 
@@ -68,7 +68,7 @@ public class NewBehaviourScript : MonoBehaviour
             if (Time.time > attackTime)
             {
                 animations.Play("Hit");
-                Target.GetComponent<PlayerHP>().ApplyDamage(TheDamage);
+                Target.GetComponent<playerStat>().ApplyDamage(TheDamage);
                 Debug.Log("L'ennemi a envoyé " + TheDamage + " points de dégâts");
                 attackTime = Time.time + attackRepeatTime;
             }
