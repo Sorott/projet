@@ -52,7 +52,7 @@ public class NewBehaviourScript : MonoBehaviour
             Chase();
         }
 
-        if (Distance > ChasseRange)
+        if (Distance <= attackRange)
         {
             attack();
         }
@@ -62,16 +62,18 @@ public class NewBehaviourScript : MonoBehaviour
             //animations.Play("Orc Walk");
             animations.SetBool("IsWalking", true);
             agent.destination = Target.position;
+            agent.isStopped = false;
         }
 
         void attack()
         {
             if (Time.time > attackTime)
             {
-                animations.Play("Zombie Attack");
+                animations.SetTrigger("Attack");
                 Target.GetComponent<playerStat>().ApplyDamage(TheDamage);
                 Debug.Log("L'ennemi a envoyé " + TheDamage + " points de dégâts");
                 attackTime = Time.time + attackRepeatTime;
+                agent.isStopped = true;
             }
         }
 
@@ -80,7 +82,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             //animations.Play("Orc Idle");
             animations.SetBool("IsWalking", false);
-
+            agent.isStopped = true;
         }
 
 
