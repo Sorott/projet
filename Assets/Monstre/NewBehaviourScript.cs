@@ -38,7 +38,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Target = GameObject.Find("Cube").transform;
+        //Target = GameObject.Find("Cube").transform;
 
         Distance = Vector3.Distance(Target.position, transform.position);
 
@@ -59,7 +59,8 @@ public class NewBehaviourScript : MonoBehaviour
 
         void Chase()
         {
-            animations.Play("walk");
+            //animations.Play("Orc Walk");
+            animations.SetBool("IsWalking", true);
             agent.destination = Target.position;
         }
 
@@ -67,7 +68,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             if (Time.time > attackTime)
             {
-                animations.Play("Hit");
+                animations.Play("Zombie Attack");
                 Target.GetComponent<playerStat>().ApplyDamage(TheDamage);
                 Debug.Log("L'ennemi a envoyé " + TheDamage + " points de dégâts");
                 attackTime = Time.time + attackRepeatTime;
@@ -77,7 +78,9 @@ public class NewBehaviourScript : MonoBehaviour
 
         void idle()
         {
-            animations.Play("idle");
+            //animations.Play("Orc Idle");
+            animations.SetBool("IsWalking", false);
+
         }
 
 
