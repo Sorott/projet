@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
-
     [Header("Movement")]
-    private float speed = 12f;
+    public CharacterController controller;
+    private float speed = 0f;
     public float walkSpeed;
     public float sprintSpeed;
     public float gravity = -10f;
 
+    [Header("Crounch")]
+    public float crounchspeed;
+    public float crounchYScale;
+    private float startYScale;
+
     [Header("Keybinds")]
-    private KeyCode forward = KeyCode.Z;
+    private KeyCode forward = KeyCode.W;
     public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode crounchKey = KeyCode.LeftControl;
 
     [Header("Ground")]
     public Transform groundCheck;
@@ -29,11 +34,30 @@ public class PlayerMovement : MonoBehaviour
     {
         walking,
         sprinting,
+        crounching,
         air
     }
 
+    private void MyInput()
+    {
+        if (Input.GetKeyDown(crounchKey))
+        {
+            transform.localScale = new Vector3(transform.localScale.x, crounchYScale, transform.localScale.z);
+        }
+
+        if (Input.GetKeyUp(crounchKey))
+        {
+            transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
+        }
+    }
     public void StateHandler()
     {
+        if (Input.GetKey(crounchKey))   
+        {
+            state = MovementState.crounching;
+            speed = crounchspeed;
+        }
+
         if (isGrounded && Input.GetKey(sprintKey) && Input.GetKey(forward))
         {
             state = MovementState.sprinting;
@@ -50,9 +74,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        startYScale = transform.localScale.y;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        MyInput();
         StateHandler();
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
