@@ -1,35 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Movement")]
-    public CharacterController controller;
-    private float speed = 0f;
-    public float walkSpeed;
-    public float sprintSpeed;
-    public float gravity = -10f;
+    [Header("Mouvement")]
+    private float moveSpeed;
+    public float walkspeed;
+    public float sprintspeed;
 
-    [Header("Crounch")]
-    public float crounchspeed;
+    public float groundDrag;
+
+    [Header("Crounching")]
+    public float crounchSpeed;
     public float crounchYScale;
     private float startYScale;
 
     [Header("Keybinds")]
-    private KeyCode forward = KeyCode.W;
     public KeyCode sprintKey = KeyCode.LeftShift;
     public KeyCode crounchKey = KeyCode.LeftControl;
 
-    [Header("Ground")]
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
+    [Header("Ground Check")]
+    public float playerHeight;
+    public LayerMask whatisGround;
+    bool grounded;
 
-    Vector3 velocity;
-    bool isGrounded;
+    public Transform orientation;
+
+    float horizontalInput;
+    float verticaleInput;
+
+    Vector3 moveDirection;
+
+    Rigidbody rb;
 
     public MovementState state;
+
     public enum MovementState
     {
         walking,
@@ -38,11 +45,46 @@ public class PlayerMovement : MonoBehaviour
         air
     }
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+
+        startYScale = transform.localScale.y;
+    }
+
+    private void Update()
+    {
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatisGround);
+
+        MyInput();
+        SpeedControle();
+        StateHandler();
+
+        if (grounded)
+        {
+            rb.drag = groundDrag;
+        }
+        else
+        {
+            rb.drag = 0;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        MovePlayer();
+    }
+
     private void MyInput()
     {
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticaleInput = Input.GetAxisRaw("Vertical");
+
         if (Input.GetKeyDown(crounchKey))
         {
             transform.localScale = new Vector3(transform.localScale.x, crounchYScale, transform.localScale.z);
+            rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
         }
 
         if (Input.GetKeyUp(crounchKey))
@@ -50,23 +92,27 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
         }
     }
-    public void StateHandler()
+    private void StateHandler()
     {
-        if (Input.GetKey(crounchKey))   
+        if (Input.GetKey(crounchKey))
         {
             state = MovementState.crounching;
-            speed = crounchspeed;
+            moveSpeed = crounchSpeed;
         }
-
-        if (isGrounded && Input.GetKey(sprintKey) && Input.GetKey(forward))
+        else if (grounded && Input.GetKey(sprintKey) && verticaleInput > 0 && horizontalInput == 0)
         {
             state = MovementState.sprinting;
-            speed = sprintSpeed;
+            moveSpeed = sprintspeed;
         }
-        else if (isGrounded)
+        else if (grounded && Input.GetKey(sprintKey) && verticaleInput > 0)
+        {
+            state = MovementState.sprinting;
+            moveSpeed = sprintspeed / 1.25f;
+        }
+        else if (grounded)
         {
             state = MovementState.walking;
-            speed = walkSpeed;
+            moveSpeed = walkspeed;
         }
         else
         {
@@ -74,33 +120,21 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void MovePlayer()
     {
-        startYScale = transform.localScale.y;
+        moveDirection = orientation.forward * verticaleInput + orientation.right * horizontalInput;
+
+        rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void SpeedControle()
     {
-        MyInput();
-        StateHandler();
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        
-        if (isGrounded && velocity.y < 0)
+        if (flatVel.magnitude > moveSpeed)
         {
-            velocity.y = -2f;
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        controller.Move(move * speed * Time.deltaTime);
-
-        velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
     }
 }
