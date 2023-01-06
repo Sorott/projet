@@ -6,7 +6,11 @@ public class HUD : MonoBehaviour
 {
     public GameObject flashLightON;
     public GameObject flashLightOFF;
+    public GameObject flashLightInv;
     public GameObject flashLightLight;
+
+    public bool UILightOn;
+    public bool UILightOff;
 
     void Start()
     {
@@ -16,20 +20,20 @@ public class HUD : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Interact"))
+        if (flashLightInv.activeInHierarchy && Input.GetButtonDown("Interact"))
         {
             flashLightON.SetActive(false);
             flashLightOFF.SetActive(true);
         }
-        if (flashLightLight.activeInHierarchy && Input.GetButtonDown("F"))
-        {
-            flashLightON.SetActive(false);
-            flashLightOFF.SetActive(true);
-        }
-        else if (Input.GetButtonDown("F"))
+        else if (flashLightInv.activeInHierarchy && flashLightLight.activeInHierarchy)
         {
             flashLightON.SetActive(true);
             flashLightOFF.SetActive(false);
+        }
+        else if (flashLightInv.activeInHierarchy && !flashLightLight.activeInHierarchy)
+        {
+            flashLightON.SetActive(false);
+            flashLightOFF.SetActive(true);
         }
     }
 }
