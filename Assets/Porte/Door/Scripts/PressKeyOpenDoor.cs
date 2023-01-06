@@ -19,7 +19,7 @@ public class PressKeyOpenDoor : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Reach")
         {
             Instruction.SetActive(true);
             Action = true;
@@ -35,7 +35,7 @@ public class PressKeyOpenDoor : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetButtonDown("Interact"))
         {
             if (Action == true)
             {
