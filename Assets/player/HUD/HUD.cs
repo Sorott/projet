@@ -16,15 +16,15 @@ public class HUD : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Interact"))
+        if (flashLightLight.activeInHierarchy && !Input.GetButtonDown("F"))
         {
             flashLightON.SetActive(false);
             flashLightOFF.SetActive(true);
         }
-        if (flashLightLight.activeInHierarchy && Input.GetButtonDown("F"))
+        else if (flashLightLight.activeInHierarchy && Input.GetButtonDown("F"))
         {
-            flashLightON.SetActive(false);
-            flashLightOFF.SetActive(true);
+            flashLightON.SetActive(true);
+            flashLightOFF.SetActive(false);
         }
         else if (Input.GetButtonDown("F"))
         {
