@@ -7,6 +7,7 @@ public class PauseGame : MonoBehaviour
     public GameObject menu;
     public GameObject resume;
     public GameObject quit;
+    public AudioSource menuSound;
 
     public bool on;
     public bool off;
@@ -14,6 +15,7 @@ public class PauseGame : MonoBehaviour
     void Start()
     {
         menu.SetActive(false);
+        menuSound.Stop();
         off = true;
         on = false;
     }
@@ -24,6 +26,7 @@ public class PauseGame : MonoBehaviour
         {
             Time.timeScale = 0;
             menu.SetActive(true);
+            menuSound.Play();
             off = false;
             on = true;
         }
@@ -31,6 +34,7 @@ public class PauseGame : MonoBehaviour
         {
             Time.timeScale = 1;
             menu.SetActive(false);
+            menuSound.Stop();
             off = true;
             on = false;
         }
