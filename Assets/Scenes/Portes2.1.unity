@@ -880,6 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -2669,6 +2670,7 @@ MonoBehaviour:
   menu: {fileID: 753149812}
   resume: {fileID: 1353543781}
   quit: {fileID: 53660091}
+  menuSound: {fileID: 0}
   on: 0
   off: 0
 --- !u!114 &1138097584
@@ -2685,7 +2687,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashLightON: {fileID: 103169844}
   flashLightOFF: {fileID: 2096389387}
+  flashLightInv: {fileID: 0}
   flashLightLight: {fileID: 857349279}
+  UILightOn: 0
+  UILightOff: 0
 --- !u!114 &1138097585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2742,6 +2747,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   orientation: {fileID: 1091003877}
+  walksound: {fileID: 0}
   state: 0
 --- !u!114 &1138097588
 MonoBehaviour:
@@ -7488,6 +7494,7 @@ GameObject:
   - component: {fileID: 1065269863201648760}
   - component: {fileID: 8727306036382356276}
   - component: {fileID: 2484209189975204615}
+  - component: {fileID: 8727306036382356277}
   m_Layer: 0
   m_Name: porte007
   m_TagString: Untagged
@@ -8065,6 +8072,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7212312623255062091}
   m_Mesh: {fileID: -5300963568176852325, guid: d338b032daf9a084d8bce180b1631272, type: 3}
+--- !u!95 &8727306036382356277
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7212312623255062091}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ff8af2acbe99e6409b49436e8041532, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &8802647333916729960
 Transform:
   m_ObjectHideFlags: 0
