@@ -26,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask whatisGround;
     bool grounded;
 
+    [Header("Slop Handling")]
+    public float maxSlopAngle;
+    private RaycastHit slopHit;
+
     public Transform orientation;
 
     public AudioSource walksound;
@@ -53,6 +57,8 @@ public class PlayerMovement : MonoBehaviour
         rb.freezeRotation = true;
 
         startYScale = transform.localScale.y;
+
+        walksound.Stop();
     }
 
     private void Update()
@@ -126,17 +132,54 @@ public class PlayerMovement : MonoBehaviour
     {
         moveDirection = orientation.forward * verticaleInput + orientation.right * horizontalInput;
 
+        if (OnSlope())
+        {
+            rb.AddForce(GetSlopMoveDirection() * moveSpeed * 20f, ForceMode.Force);
+
+            if (rb.velocity.y > 0)
+            {
+                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
+            }
+        }
+
         rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+
+        rb.useGravity = !OnSlope();
     }
 
     private void SpeedControle()
     {
-        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-        if (flatVel.magnitude > moveSpeed)
+        if (OnSlope())
         {
-            Vector3 limitedVel = flatVel.normalized * moveSpeed;
-            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+            if (rb.velocity.magnitude > moveSpeed)
+            {
+                rb.velocity = rb.velocity.normalized * moveSpeed;
+            }
         }
+        else
+        {
+            Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+            if (flatVel.magnitude > moveSpeed)
+            {
+                Vector3 limitedVel = flatVel.normalized * moveSpeed;
+                rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+            }
+        }
+    }
+
+    private bool OnSlope()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out slopHit, playerHeight * 0.5f + 0.3f))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopHit.normal);
+            return angle < maxSlopAngle && angle != 0;
+        }
+        return false;
+    }
+
+    private Vector3 GetSlopMoveDirection()
+    {
+        return Vector3.ProjectOnPlane(moveDirection, slopHit.normal).normalized;
     }
 }
