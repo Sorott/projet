@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform orientation;
 
+    public AudioSource walksound;
+
     float horizontalInput;
     float verticaleInput;
 
