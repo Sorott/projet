@@ -3715,8 +3715,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.02
-  m_Range: 25
+  m_Intensity: 0.05
+  m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -5068,7 +5068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 881426546}
   m_Layer: 0
-  m_Name: Map Light (1)
+  m_Name: Map Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6029,7 +6029,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1087654737}
   m_Layer: 0
-  m_Name: Items PickUp (1)
+  m_Name: Items PickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7523,7 +7523,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.1
+  m_Intensity: 0
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7562,7 +7562,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -8560,7 +8560,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ef08fa856b31624cbb93add91231b57,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.87
+      value: -13.113
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ef08fa856b31624cbb93add91231b57,
         type: 3}
@@ -8570,7 +8570,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3ef08fa856b31624cbb93add91231b57,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.117
+      value: -10.908
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3ef08fa856b31624cbb93add91231b57,
         type: 3}
@@ -9806,7 +9806,7 @@ GameObject:
   - component: {fileID: 2038848956}
   - component: {fileID: 2038848955}
   m_Layer: 3
-  m_Name: Player (1)
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10291,17 +10291,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8541211971099e345bd7598029199ba6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.864
+      value: -12.993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8541211971099e345bd7598029199ba6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.841
+      value: 4.81
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8541211971099e345bd7598029199ba6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.026
+      value: -12.557
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8541211971099e345bd7598029199ba6,
         type: 3}
