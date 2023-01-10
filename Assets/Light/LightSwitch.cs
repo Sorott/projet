@@ -49,21 +49,20 @@ public class LightSwitch : MonoBehaviour
     {
         if(lightAreOn && inReach && Input.GetButtonDown("Interact"))
         {
-            lightOB.SetActive(true);
-            onOB.SetActive(true);
-            offOB.SetActive(false);
+            lightOB.SetActive(false);
+            onOB.SetActive(false);
+            offOB.SetActive(true);
             lightclick.Play();
             lightAreOff = true;
             lightAreOn = false;
 
 
         }
-
-        if (lightAreOff && inReach && Input.GetButtonDown("Interact"))
+        else if (lightAreOff && inReach && Input.GetButtonDown("Interact"))
         {
-            lightOB.SetActive(false);
-            onOB.SetActive(false);
-            offOB.SetActive(true);
+            lightOB.SetActive(true);
+            onOB.SetActive(true);
+            offOB.SetActive(false);
             lightclick.Play();
             lightAreOff = false;
             lightAreOn = true;
