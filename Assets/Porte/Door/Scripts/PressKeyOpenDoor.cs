@@ -7,7 +7,6 @@ public class PressKeyOpenDoor : MonoBehaviour
 {
     public GameObject Instruction;
     public GameObject AnimeObject;
-    public GameObject ThisTrigger;
     public AudioSource DoorOpenSound;
     public bool Action = false;
 
@@ -42,7 +41,6 @@ public class PressKeyOpenDoor : MonoBehaviour
                 Instruction.SetActive(false);
                 var animator = AnimeObject.GetComponent<Animator>();
                 animator.SetBool("DoorOpen", !animator.GetBool("DoorOpen"));
-                ThisTrigger.SetActive(false);
                 DoorOpenSound.Play();
                 Action = false;
             }
