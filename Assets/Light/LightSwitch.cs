@@ -9,7 +9,7 @@ public class LightSwitch : MonoBehaviour
 
     public GameObject lightsText;
 
-    public GameObject lightOB;
+    public GameObject lightOB1;
 
     public AudioSource lightclick;
 
@@ -24,7 +24,7 @@ public class LightSwitch : MonoBehaviour
         lightAreOff = true;
         onOB.SetActive(false);
         offOB.SetActive(true);
-        lightOB.SetActive(false);
+        lightOB1.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -49,7 +49,7 @@ public class LightSwitch : MonoBehaviour
     {
         if(lightAreOn && inReach && Input.GetButtonDown("Interact"))
         {
-            lightOB.SetActive(false);
+            lightOB1.SetActive(false);
             onOB.SetActive(false);
             offOB.SetActive(true);
             lightclick.Play();
@@ -60,7 +60,7 @@ public class LightSwitch : MonoBehaviour
         }
         else if (lightAreOff && inReach && Input.GetButtonDown("Interact"))
         {
-            lightOB.SetActive(true);
+            lightOB1.SetActive(true);
             onOB.SetActive(true);
             offOB.SetActive(false);
             lightclick.Play();
