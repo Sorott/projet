@@ -6561,7 +6561,7 @@ MonoBehaviour:
   onOB: {fileID: 0}
   offOB: {fileID: 0}
   lightsText: {fileID: 1041811103}
-  lightOB: {fileID: 0}
+  lightOB1: {fileID: 0}
   lightclick: {fileID: 0}
   lightAreOn: 0
   lightAreOff: 0
@@ -41926,7 +41926,7 @@ MonoBehaviour:
   onOB: {fileID: 1386156303}
   offOB: {fileID: 239156793}
   lightsText: {fileID: 1041811103}
-  lightOB: {fileID: 0}
+  lightOB1: {fileID: 0}
   lightclick: {fileID: 0}
   lightAreOn: 0
   lightAreOff: 0
@@ -46294,7 +46294,7 @@ MonoBehaviour:
   onOB: {fileID: 1386156303}
   offOB: {fileID: 239156793}
   lightsText: {fileID: 1041811103}
-  lightOB: {fileID: 2017180036}
+  lightOB1: {fileID: 0}
   lightclick: {fileID: 671993114}
   lightAreOn: 0
   lightAreOff: 0
