@@ -7,6 +7,7 @@ public class PressKeyOpenDoor : MonoBehaviour
 {
     public GameObject Instruction;
     public GameObject AnimeObject;
+    public GameObject Reach;
     public AudioSource DoorOpenSound;
     public bool Action = false;
 
