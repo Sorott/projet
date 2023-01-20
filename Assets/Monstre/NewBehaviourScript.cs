@@ -71,7 +71,6 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 animations.SetTrigger("Attack");
                 Target.GetComponent<playerStat>().ApplyDamage(TheDamage);
-                Debug.Log("L'ennemi a envoyé " + TheDamage + " points de dégâts");
                 attackTime = Time.time + attackRepeatTime;
                 agent.isStopped = true;
             }
