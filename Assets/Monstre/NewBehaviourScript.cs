@@ -27,12 +27,17 @@ public class NewBehaviourScript : MonoBehaviour
 
     // Animation de l'ennemi
     private Animator animations;
+
+    // Vitesse par défaut de l'agent
+    private float defaultSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
         agent = gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>();
         animations = gameObject.GetComponent<Animator>();
         attackTime = Time.time;
+        defaultSpeed = agent.speed;
     }
 
     // Update is called once per frame
@@ -40,6 +45,8 @@ public class NewBehaviourScript : MonoBehaviour
     {
         //Target = GameObject.Find("Cube").transform;
 
+
+        Debug.Log($"agent.isStopped: {agent.isStopped}");
         Distance = Vector3.Distance(Target.position, transform.position);
 
         if (Distance > ChasseRange)
@@ -59,10 +66,14 @@ public class NewBehaviourScript : MonoBehaviour
 
         void Chase()
         {
+            // Si l'animation qui est entrain de play est celle de l'attaque
+            if (animations.GetCurrentAnimatorStateInfo(0).IsName("Zombie Attack")) return;
+
             //animations.Play("Orc Walk");
             animations.SetBool("IsWalking", true);
             agent.destination = Target.position;
             agent.isStopped = false;
+            agent.speed = defaultSpeed;
         }
 
         void attack()
@@ -84,6 +95,6 @@ public class NewBehaviourScript : MonoBehaviour
             agent.isStopped = true;
         }
 
-
+        
     }
 }
