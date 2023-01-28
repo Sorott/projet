@@ -12,14 +12,14 @@ public class NewBehaviourScript : MonoBehaviour
 
     //Distance de poursuite
     public float ChasseRange = 10;
-    // Portée des attaaues
+    // Portï¿½e des attaaues
     public float attackRange = 2.2f;
 
     // Cppmdpwn des attaques
     public float attackRepeatTime = 1;
     private float attackTime;
 
-    //Montant des dégâts infligés
+    //Montant des dï¿½gï¿½ts infligï¿½s
     public float TheDamage;
 
     // Agent de navigation
@@ -28,7 +28,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Animation de l'ennemi
     private Animator animations;
 
-    // Vitesse par défaut de l'agent
+    // Vitesse par dï¿½faut de l'agent
     private float defaultSpeed;
 
     // Start is called before the first frame update
@@ -46,7 +46,7 @@ public class NewBehaviourScript : MonoBehaviour
         //Target = GameObject.Find("Cube").transform;
 
 
-        Debug.Log($"agent.isStopped: {agent.isStopped}");
+        
         Distance = Vector3.Distance(Target.position, transform.position);
 
         if (Distance > ChasseRange)
