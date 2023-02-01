@@ -10,6 +10,7 @@ public class LightSwitch : MonoBehaviour
     public GameObject lightsText;
 
     public GameObject lightOB1;
+    public GameObject lightOB1;
 
     public AudioSource lightclick;
 
