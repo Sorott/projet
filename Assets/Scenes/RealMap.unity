@@ -39536,6 +39536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -56332,7 +56333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4361804131237145577}
   m_LocalRotation: {x: 0.000000347501, y: 0.8263526, z: 0.00000006038477, w: 0.5631531}
-  m_LocalPosition: {x: 0.847, y: 0.876, z: 2.723}
+  m_LocalPosition: {x: 0.644, y: -0.029, z: 2.726}
   m_LocalScale: {x: 9.997749, y: 9.99775, z: 9.997749}
   m_ConstrainProportionsScale: 0
   m_Children: []
