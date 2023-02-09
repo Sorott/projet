@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private GameObject healthbar;
+    private Image healthbar;
     public float health;
     private float maxhealth = 100f;
-    playerStat playerStat;
+    playerStat player;
 
     void Start()
     {
-        
+        healthbar = GetComponent<Image>();
+        player = FindObjectOfType<playerStat>();
     }
 
     void Update()
