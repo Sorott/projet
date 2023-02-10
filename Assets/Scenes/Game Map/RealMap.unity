@@ -16230,6 +16230,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 852432525}
+  - {fileID: 1905149742}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24202,7 +24203,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 77144319d178e9f458828a8816ec5265,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 77144319d178e9f458828a8816ec5265,
         type: 3}
@@ -26099,8 +26100,8 @@ MonoBehaviour:
   Target: {fileID: 1750996894}
   ChasseRange: 20
   attackRange: 1.5
-  attackRepeatTime: 4.5
-  TheDamage: 50
+  attackRepeatTime: 1
+  TheDamage: 25
 --- !u!1 &1322062976
 GameObject:
   m_ObjectHideFlags: 0
@@ -36887,6 +36888,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1905149742 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3ef08fa856b31624cbb93add91231b57,
+    type: 3}
+  m_PrefabInstance: {fileID: 1912184729}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1905786486
 GameObject:
   m_ObjectHideFlags: 0

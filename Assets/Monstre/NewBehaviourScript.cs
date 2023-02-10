@@ -30,7 +30,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     // Vitesse par d�faut de l'agent
     private float defaultSpeed;
-
+    private bool attacking = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,9 +59,9 @@ public class NewBehaviourScript : MonoBehaviour
             Chase();
         }
 
-        if (Distance <= attackRange)
+        if (Distance <= attackRange && !attacking)
         {
-            attack();
+            StartCoroutine(attack());
         }
 
         void Chase()
@@ -76,14 +76,18 @@ public class NewBehaviourScript : MonoBehaviour
             agent.speed = defaultSpeed;
         }
 
-        void attack()
+        IEnumerator attack()
         {
             if (Time.time > attackTime)
             {
+                attacking = true;
                 animations.SetTrigger("Attack");
+                yield return new WaitForSeconds(1.25f);
                 Target.GetComponent<playerStat>().ApplyDamage(TheDamage);
                 attackTime = Time.time + attackRepeatTime;
                 agent.isStopped = true;
+                attacking = false;
+                yield return new WaitForEndOfFrame();
             }
         }
 
