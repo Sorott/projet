@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Scenes/Menu/Main Menu.unity
     guid: ecb3044c76376ae41bebae2b28f50e51
   - enabled: 1
-    path: Assets/Scenes/RealMap.unity
+    path: Assets/Scenes/Menu/Options Menu Main.unity
+    guid: 2bd5547836d2ed74c8beab480b821ecd
+  - enabled: 1
+    path: Assets/Scenes/Menu/Death Menu.unity
+    guid: d08382f9dbeddab44b563cd011fed1e7
+  - enabled: 1
+    path: Assets/Scenes/Game Map/RealMap.unity
     guid: 47032d6b385e9b34ea075400d8e01379
   m_configObjects: {}

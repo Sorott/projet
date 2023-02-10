@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerStat : MonoBehaviour
 {
@@ -9,15 +10,8 @@ public class playerStat : MonoBehaviour
     public float PlayerHP = 100f;
     public GameObject HUD;
     public GameObject inventaire;
-    public GameObject deathscreen;
     public GameObject player;
-    public AudioSource SonMort;
 
-    public void Start()
-    {
-        deathscreen.SetActive(false);
-        SonMort.Stop();
-    }
 
     public void ApplyDamage(float Damage)
     {
@@ -27,16 +21,12 @@ public class playerStat : MonoBehaviour
 
     public void Update()
     {
-        if ( PlayerHP <= 0)
+        if (PlayerHP <= 0)
         {
             Time.timeScale = 0;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            HUD.SetActive(false);
-            inventaire.SetActive(false);
-            deathscreen.SetActive(true);
-            SonMort.Play();
-
+            SceneManager.LoadScene("Death Menu");
         }
 
         if (PlayerHP > 100)
