@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DeathScreenButtons : MonoBehaviour
+public class SoloMenu : MonoBehaviour
 {
-    public void ReStartGame()
+    public void BouttonContinu()
     {
         SceneManager.LoadScene("RealMap");
     }
 
-    public void GoToOptions()
+    public void BouttonNewSoloGame()
     {
-        SceneManager.LoadScene("Options Menu Main");
+        SceneManager.LoadScene("RealMap");
     }
 
-    public void GoToMainMenu()
+    public void BouttonReturnMenu()
     {
         SceneManager.LoadScene("Main Menu");
     }

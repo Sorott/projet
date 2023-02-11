@@ -5,24 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void StartGame()
+    public void BouttonSolo()
     {
-        SceneManager.LoadScene("RealMap");
+        SceneManager.LoadScene("Solo Menu");
     }
 
-    public void GoToOptions()
+    public void BouttonMulti()
     {
-        SceneManager.LoadScene("Options Menu Main");
+        SceneManager.LoadScene("Multi Menu");
     }
 
-    public void GoToMainMenu()
+    public void BouttonOptions()
     {
-        SceneManager.LoadScene("Main Menu");
-        Debug.Log("Le jeu devrait etre fermé mais sa marche pas ta capté pck on est sur Unity fréro");
+        SceneManager.LoadScene("Options Menu");
+    }
+    public void BouttonSkin()
+    {
+        SceneManager.LoadScene("Skin Menu");
+    }
+    public void BouttonCredits()
+    {
+        SceneManager.LoadScene("Credits Menu");
     }
 
-    public void QuitterGame()
+    public void BouttonQuitter()
     {
         Application.Quit();
+        Debug.Log("Le jeu devrait etre fermé mais sa marche pas ta capté pck on est sur Unity fréro");
     }
 }

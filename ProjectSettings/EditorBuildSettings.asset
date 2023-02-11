@@ -12,8 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Main Menu.unity
     guid: ecb3044c76376ae41bebae2b28f50e51
   - enabled: 1
-    path: Assets/Scenes/Menu/Options Menu Main.unity
+    path: Assets/Scenes/Menu/Solo Menu.unity
+    guid: ed653d584d031834c82b282622e246de
+  - enabled: 1
+    path: Assets/Scenes/Menu/Multi Menu.unity
+    guid: 8e294031535dc3c428b499480d435027
+  - enabled: 1
+    path: Assets/Scenes/Menu/Options Menu.unity
     guid: 2bd5547836d2ed74c8beab480b821ecd
+  - enabled: 1
+    path: Assets/Scenes/Menu/Skin Menu.unity
+    guid: ea3c387bcbdcce444bfc55649db26bc7
+  - enabled: 1
+    path: Assets/Scenes/Menu/Credits Menu.unity
+    guid: c90409223074757408286b3f3096e33c
   - enabled: 1
     path: Assets/Scenes/Menu/Death Menu.unity
     guid: d08382f9dbeddab44b563cd011fed1e7

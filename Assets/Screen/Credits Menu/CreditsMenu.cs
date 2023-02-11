@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class OptionsMenuMain : MonoBehaviour
+public class CreditsMenu : MonoBehaviour
 {
-    public void ReturnButton()
+    public void BouttonReturnMenu()
     {
         SceneManager.LoadScene("Main Menu");
     }
