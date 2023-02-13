@@ -36150,6 +36150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventaire: {fileID: 681597601}
+  camera: {fileID: 1385686518}
 --- !u!114 &1750996897
 MonoBehaviour:
   m_ObjectHideFlags: 0
