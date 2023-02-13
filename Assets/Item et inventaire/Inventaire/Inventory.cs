@@ -6,15 +6,15 @@ public class Inventory : MonoBehaviour
 {
     public GameObject inventaire;
     public static bool isOn;
-    public PlayerCam camera;
+    public PlayerCam camlpayer;
     private float Sens_x_default;
     private float Sens_y_default;
 
     public void Start()
     {
         inventaire.SetActive(false);
-        Sens_x_default = camera.sensX;
-        Sens_y_default = camera.sensY;
+        Sens_x_default = camlpayer.sensX;
+        Sens_y_default = camlpayer.sensY;
     }
 
     public void Update()
@@ -24,15 +24,15 @@ public class Inventory : MonoBehaviour
             if (isOn)
             {
                 Resume();
-                camera.sensX = Sens_x_default;
-                camera.sensY = Sens_y_default;
+                camlpayer.sensX = Sens_x_default;
+                camlpayer.sensY = Sens_y_default;
                 
             }
             else
             {
                 Pause();
-                camera.sensX = 0;
-                camera.sensY = 0;
+                camlpayer.sensX = 0;
+                camlpayer.sensY = 0;
             }
         }
     }
