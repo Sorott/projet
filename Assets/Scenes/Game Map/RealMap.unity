@@ -1066,6 +1066,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Orc Walk
       objectReference: {fileID: 0}
+    - target: {fileID: 5465940246521907071, guid: b9d248a9e22c58f4b858083c82c0795a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 18.781612
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465940246521907071, guid: b9d248a9e22c58f4b858083c82c0795a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 18.781612
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465940246521907071, guid: b9d248a9e22c58f4b858083c82c0795a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 18.781612
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465940246521907071, guid: b9d248a9e22c58f4b858083c82c0795a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9d248a9e22c58f4b858083c82c0795a, type: 3}
 --- !u!1 &43082795
@@ -21719,7 +21739,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034324512}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 77144319d178e9f458828a8816ec5265, type: 3}
+  m_Avatar: {fileID: 9000000, guid: b9d248a9e22c58f4b858083c82c0795a, type: 3}
   m_Controller: {fileID: 9100000, guid: b4363326dd4d86745b7b9c9aed6eccc8, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -21766,7 +21786,7 @@ NavMeshAgent:
   m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 0
+  m_BaseOffset: 0.45
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &1034339634
