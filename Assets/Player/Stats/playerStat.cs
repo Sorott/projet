@@ -9,7 +9,6 @@ public class playerStat : MonoBehaviour
     [SerializeField]
     public float PlayerHP = 100f;
     public GameObject HUD;
-    public GameObject inventaire;
     public GameObject player;
 
 
