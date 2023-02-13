@@ -5,5 +5,4 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Iventory/ItemData")]
 public class ItemData : ScriptableObject
 {
-
 }
