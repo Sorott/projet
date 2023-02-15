@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 26759989}
   - component: {fileID: 26759988}
   m_Layer: 0
-  m_Name: Spot Light
+  m_Name: Torche(viteFait)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36517,8 +36517,8 @@ GameObject:
   - component: {fileID: 1750996892}
   - component: {fileID: 1750996891}
   - component: {fileID: 1750996895}
-  - component: {fileID: 1750996896}
   - component: {fileID: 1750996897}
+  - component: {fileID: 1750996896}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
