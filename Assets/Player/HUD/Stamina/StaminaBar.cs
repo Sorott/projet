@@ -4,31 +4,35 @@ using UnityEngine;
 
 public class StaminaBar : MonoBehaviour
 {
-    float stamina = 5, maxStamina = 5;
-    float walkSpeed, runSpeed;
-    CharacterController cm;
-    bool isRunning;
+    public float stamina = 5, maxStamina = 5;
+    public float walkSpeed, runSpeed;
+    public bool isRunning;
+    PlayerMovement cm;
+   
+    
 
     Rect staminaRect;
     Texture2D staminaTexture;
 
     void Start()
     {
-        cm = gameObject.GetComponent<CharacterController>();
-        walkSpeed = cm.movement.maxForwardSpeed;
+        cm = gameObject.GetComponent<PlayerMovement>();
+        walkSpeed = cm.walkspeed;
         runSpeed = walkSpeed * 4;
 
         staminaRect = new Rect(Screen.width / 10, Screen.height * 9 / 10,
             Screen.width / 3, Screen.height / 50);
         staminaTexture = new Texture2D(1, 1);
-        staminaTexture.SetPixel(0, 0, Color.white);
+        staminaTexture.SetPixel(0, 0, Color.white,50);
         staminaTexture.Apply();
+        
+        
     }
 
     void SetRunning(bool isRunning)
     {
         this.isRunning = isRunning;
-        cm.movement.MaxForwardSpeed = isRunning ? runSpeed : walkSpeed;
+        cm.walkspeed = isRunning ? runSpeed : walkSpeed;
        
     }
     

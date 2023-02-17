@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Mouvement")]
     private float moveSpeed;
     public float walkspeed;
-    public float sprintspeed;
+    //public float sprintspeed;
 
     public float groundDrag;
 
@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.crounching;
             moveSpeed = crounchSpeed;
         }
-        else if (grounded && Input.GetKey(sprintKey) && verticaleInput > 0 && horizontalInput == 0)
+       /* else if (grounded && Input.GetKey(sprintKey) && verticaleInput > 0 && horizontalInput == 0)
         {
             state = MovementState.sprinting;
             moveSpeed = sprintspeed;
@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.sprinting;
             moveSpeed = sprintspeed / 1.25f;
-        }
+        }*/
         else if (grounded)
         {
             state = MovementState.walking;
