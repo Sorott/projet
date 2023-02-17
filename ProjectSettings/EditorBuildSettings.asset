@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Multi Menu.unity
     guid: 8e294031535dc3c428b499480d435027
   - enabled: 1
-    path: Assets/Scenes/Menu/Options Menu.unity
+    path: Assets/Scenes/Menu/Options Menu (Game).unity
     guid: 2bd5547836d2ed74c8beab480b821ecd
   - enabled: 1
     path: Assets/Scenes/Menu/Skin Menu.unity

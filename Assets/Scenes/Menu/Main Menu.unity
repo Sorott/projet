@@ -402,9 +402,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1011243008}
+      - m_Target: {fileID: 1011243003}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: BouttonSolo
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1011243008}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: BouttonMulti
         m_Mode: 1
@@ -750,7 +750,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1011243008}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: BouttonQuitter
         m_Mode: 1
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1011243008}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: BouttonOptions
         m_Mode: 1
@@ -1246,7 +1246,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1011243003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 318ed5a8d95bd6c4b8f5a7b3cc99ae67, type: 3}
+  m_Script: {fileID: 11500000, guid: ebfe45f95b8865d48a527f5fdb4becec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1044274204
@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1011243008}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: BouttonCredits
         m_Mode: 1
@@ -1694,7 +1694,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1011243008}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: BouttonSkin
         m_Mode: 1
