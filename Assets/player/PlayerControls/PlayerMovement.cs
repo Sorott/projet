@@ -7,10 +7,15 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Mouvement")]
     private float moveSpeed;
-    public float walkspeed;
-    //public float sprintspeed;
+    public float walkSpeed;
+    public float sprintSpeed;
 
     public float groundDrag;
+
+    [Header("Stamina")]
+    public float stamina;
+    public float maxStamina;
+    public bool isRunning;
 
     [Header("Crounching")]
     public float crounchSpeed;
@@ -18,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     private float startYScale;
 
     [Header("Keybinds")]
-    public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode sprintKey= KeyCode.LeftShift;
     public KeyCode crounchKey = KeyCode.LeftControl;
 
     [Header("Ground Check")]
@@ -73,9 +78,28 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.drag = groundDrag;
         }
+
         else
         {
             rb.drag = 0;
+        }
+
+        if (isRunning == true)
+        {
+            stamina -= Time.deltaTime;
+            if (stamina < 0)
+            {
+                stamina = 0;
+            }
+            if (stamina <= 0)
+            {
+                moveSpeed = walkSpeed;
+            }
+        }
+
+        else if (stamina < maxStamina)
+        {
+            stamina += Time.deltaTime;
         }
     }
 
@@ -100,31 +124,38 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x, startYScale, transform.localScale.z);
         }
     }
+
     private void StateHandler()
     {
         if (Input.GetKey(crounchKey))
         {
             state = MovementState.crounching;
             moveSpeed = crounchSpeed;
+
+            isRunning = false;
         }
-       /* else if (grounded && Input.GetKey(sprintKey) && verticaleInput > 0 && horizontalInput == 0)
+
+        if (Input.GetKey(sprintKey))
         {
             state = MovementState.sprinting;
-            moveSpeed = sprintspeed;
+            moveSpeed = sprintSpeed;
+
+            isRunning = true;
         }
-        else if (grounded && Input.GetKey(sprintKey) && verticaleInput > 0)
-        {
-            state = MovementState.sprinting;
-            moveSpeed = sprintspeed / 1.25f;
-        }*/
+
         else if (grounded)
         {
             state = MovementState.walking;
-            moveSpeed = walkspeed;
+            moveSpeed = walkSpeed;
+
+            isRunning = false;
         }
+
         else
         {
             state = MovementState.air;
+
+            isRunning = false;
         }
     }
 
@@ -156,6 +187,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = rb.velocity.normalized * moveSpeed;
             }
         }
+
         else
         {
             Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -175,6 +207,7 @@ public class PlayerMovement : MonoBehaviour
             float angle = Vector3.Angle(Vector3.up, slopHit.normal);
             return angle < maxSlopAngle && angle != 0;
         }
+
         return false;
     }
 
