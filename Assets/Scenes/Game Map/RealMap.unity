@@ -7307,7 +7307,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 347444757}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 70e1770785e53e24cada85ed10cdc9e4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -36455,8 +36455,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5a57382850bf5d40a8756e8b95c9c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkspeed: 2.5
+  walkSpeed: 2.5
+  sprintSpeed: 7
   groundDrag: 10
+  stamina: 5
+  maxStamina: 5
+  isRunning: 0
   crounchSpeed: 2
   crounchYScale: 0.5
   sprintKey: 304
@@ -36574,11 +36578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6915724d412be8141b64c19d2d46a759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stamina: 5
-  maxStamina: 5
-  walkSpeed: 0
-  runSpeed: 0
-  isRunning: 0
 --- !u!1001 &1753798172
 PrefabInstance:
   m_ObjectHideFlags: 0
