@@ -14,7 +14,7 @@ public class StaminaBar : MonoBehaviour
         PM.GetComponent<PlayerMovement>();
 
         staminaRect = new Rect(Screen.width / 10, Screen.height * 9 / 10,
-        Screen.width / 3, Screen.height / 50);
+            Screen.width / 3, Screen.height / 50);
         staminaTexture = new Texture2D(1, 1);
         staminaTexture.SetPixel(0, 0, Color.white, 50);
         staminaTexture.Apply();

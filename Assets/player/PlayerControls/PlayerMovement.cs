@@ -91,9 +91,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 stamina = 0;
             }
-            if (stamina <= 0)
+            if (stamina <= 1.5)
             {
-                moveSpeed = walkSpeed;
+                moveSpeed = crounchSpeed;
             }
         }
 
