@@ -7,12 +7,12 @@ public class SoloMenu : MonoBehaviour
 {
     public void BouttonContinu()
     {
-        SceneManager.LoadScene("RealMap");
+        SceneManager.LoadScene("Cinematique");
     }
 
     public void BouttonNewSoloGame()
     {
-        SceneManager.LoadScene("RealMap");
+        SceneManager.LoadScene("Cinematique");
     }
 
     public void BouttonReturnMenu()

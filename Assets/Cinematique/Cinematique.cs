@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class OptionsMenu : MonoBehaviour
+public class Cinematique : MonoBehaviour
 {
-    public void BouttonReturnMenu()
+    public void SignaleEnd()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("RealMap");
     }
 }

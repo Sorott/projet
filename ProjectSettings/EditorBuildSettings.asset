@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Multi Menu.unity
     guid: 8e294031535dc3c428b499480d435027
   - enabled: 1
-    path: Assets/Scenes/Menu/Options Menu.unity
+    path: Assets/Scenes/Menu/Options Menu (Game).unity
     guid: 2bd5547836d2ed74c8beab480b821ecd
   - enabled: 1
     path: Assets/Scenes/Menu/Skin Menu.unity
@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/Death Menu.unity
     guid: d08382f9dbeddab44b563cd011fed1e7
+  - enabled: 1
+    path: Assets/Scenes/Game Map/Cinematique.unity
+    guid: 87bbdfe823a39594e96cfb3ca26d97e0
   - enabled: 1
     path: Assets/Scenes/Game Map/RealMap.unity
     guid: 47032d6b385e9b34ea075400d8e01379

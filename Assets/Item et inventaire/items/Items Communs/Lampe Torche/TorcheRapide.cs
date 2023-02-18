@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class light : MonoBehaviour
+public class TorcheRapide : MonoBehaviour
 {
     public GameObject m_light;
     public bool isON;
